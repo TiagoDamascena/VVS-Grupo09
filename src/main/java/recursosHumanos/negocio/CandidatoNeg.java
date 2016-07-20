@@ -72,7 +72,7 @@ public class CandidatoNeg {
 	
 	private boolean validaCombinacaoTipoNacionalidadeTipoDocumento(Candidato candidato) throws NacionalidadeInvalidaException, DocumentoPessoalInvalidoException{
 
-		if((validaTipoNacionalidade(candidato) && validaTipoDocumentoPessoal(candidato)) || (candidato.getNacionalidade().equals(EnumTipoNacionalidade.BRASILEIRA) && !candidato.getTipoDocumentoPessoal().equals(EnumTipoDocumentoPessoal.CPF))){
+		if((validaTipoNacionalidade(candidato) && !validaTipoDocumentoPessoal(candidato)) || (candidato.getNacionalidade().equals(EnumTipoNacionalidade.BRASILEIRA) && !candidato.getTipoDocumentoPessoal().equals(EnumTipoDocumentoPessoal.CPF))){
 			throw new DocumentoPessoalInvalidoException(Mensagem.tipoDocumentoCPF);
 		}else if(candidato.getNacionalidade().equals(EnumTipoNacionalidade.ESTRANGEIRA) && !candidato.getTipoDocumentoPessoal().equals(EnumTipoDocumentoPessoal.PASSAPORTE)){
 			throw new DocumentoPessoalInvalidoException(Mensagem.tipoDocumentoPassaporte);
