@@ -17,6 +17,8 @@ import static org.junit.Assert.*;
 
 /**
  * Created by Tiago on 20/07/2016.
+ *
+ * Referente ao caso de teste 08
  */
 public class CandidatoNegTest {
     @Test(expected = NomeInvalidoException.class)
